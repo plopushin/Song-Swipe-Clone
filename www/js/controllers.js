@@ -10,6 +10,7 @@ Controller for the discover page
   Recommendations.getNextSongs()
   	.then(function(){
   		$scope.currentSong = Recommendations.queue[0];
+  		Recommendations.playCurrentSong();
   	});
 
   $scope.sendFeedback = function (bool) {
@@ -27,6 +28,8 @@ Controller for the discover page
   		//$timeout to allow animation to complete
 	  	$scope.currentSong = Recommendations.queue[0];
   }, 250);
+
+  	Recommendations.playCurrentSong();
 }
 
   $scope.nextAlbumImg = function(){
