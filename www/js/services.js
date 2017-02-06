@@ -32,6 +32,18 @@ angular.module('songhop.services', [])
 			queue: []
 		};
 
+		//either gets the next songs or play the current song
+
+		o.init = function() {
+			if (o.queue.length === 0) {
+				//fill queue if empty
+				return o.getNextSongs();
+			} else {
+				//play the current song
+				return o.playCurrentSong();
+			}
+		}
+
 		o.playCurrentSong = function() {
 			var defer = $q.defer(); //huh?
 
