@@ -2,6 +2,7 @@ angular.module('songhop.services', [])
 	.factory('User', function() {
 		var o = {
 			favorites: []
+			newFavorites: 0
 		};
 
 		o.addSongToFavorites = function(song) {
