@@ -1,7 +1,7 @@
 angular.module('songhop.services', [])
 	.factory('User', function() {
 		var o = {
-			favorites: []
+			favorites: [],
 			newFavorites: 0
 		};
 
@@ -12,6 +12,13 @@ angular.module('songhop.services', [])
 			//otherwise, add to favorites array
 			//unshift adds to beginning of the array
 			o.favorites.unshift(song);
+			o.newFavorites++;
+		}
+
+		//return total number of favorites 
+
+		o.favoriteCount = function() {
+			return o.newFavorites;
 		}
 
 		o.removeSongFromFavorites = function (song, index) {
