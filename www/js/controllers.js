@@ -81,6 +81,10 @@ Controller for the favorites page
 
 })
 
+.controller('SplashCtrl', function($scope) {
+	
+})
+
 
 /*
 Controller for our tab bar

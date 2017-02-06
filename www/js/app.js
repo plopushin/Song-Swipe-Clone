@@ -38,6 +38,13 @@ angular.module('songhop', ['ionic', 'songhop.controllers'])
     controller: 'TabsCtrl'
   })
 
+  //splash page
+  .state('splash', {
+    url: '/',
+    templateUrl: 'templates/splash.html',
+    controller: 'SplashCtrl'
+  })
+
   // Each tab has its own nav history stack:
 
   .state('tab.discover', {
@@ -60,7 +67,7 @@ angular.module('songhop', ['ionic', 'songhop.controllers'])
       }
     })
   // If none of the above states are matched, use this as the fallback:
-  $urlRouterProvider.otherwise('/tab/discover');
+  $urlRouterProvider.otherwise('/');
 
 })
 
