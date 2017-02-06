@@ -55,6 +55,10 @@ Controller for the favorites page
 /*
 Controller for our tab bar
 */
-.controller('TabsCtrl', function($scope) {
+.controller('TabsCtrl', function($scope, Recommendations) {
+	//stop the current audio when going to favorites page
+	$scope.enteringFavorites = function() {
+		Recommendations.haltAudio();
+	}
 
 });
