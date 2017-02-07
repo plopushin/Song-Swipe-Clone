@@ -56,8 +56,12 @@ angular.module('songhop.services', ['ionic.utils'])
 					o.populateFavorites().then(function() {
 						defer.resolve(true);
 					});
+				} else {
+					defer.resolve(false);
 				}
 			}
+
+			return defer.promise;
 		}
 
 		//wip out the session data - aka logout

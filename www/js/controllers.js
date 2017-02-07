@@ -70,7 +70,7 @@ Controller for the favorites page
 */
 .controller('FavoritesCtrl', function($scope, $window, User) {
 	$scope.favorites = User.favorites;
-
+  $scope.username = User.username;
 	$scope.removeSong = function(song, index) {
 		User.removeSongFromFavorites(song, index);
 	}
@@ -103,5 +103,12 @@ Controller for our tab bar
 	$scope.leavingFavorites = function() {
 		Recommendations.init();
 	}
+
+  $scope.logout = function() {
+    User.destroySession();
+
+    //instead of using $state.go we're going to redirect
+    $window.location.href= 'index.html';
+  }
 
 });
