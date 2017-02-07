@@ -81,7 +81,16 @@ Controller for the favorites page
 
 })
 
-.controller('SplashCtrl', function($scope) {
+.controller('SplashCtrl', function($scope, $state, User) {
+  //attempt to signup/login via User.auth
+  $scope.submitForm = function(username, signingUp) {
+    User.auth(username, signingUp).then(function(){
+      //session set, redirect to discover page
+      $state.go('tab.discover');
+    }, function() {
+      alert('Try another username.');
+    });
+  }
 	
 })
 
